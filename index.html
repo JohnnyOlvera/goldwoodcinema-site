@@ -109,6 +109,38 @@
       max-width: 880px;
     }
 
+    .now-developing {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(230,200,114,0.25);
+      border-bottom: 1px solid rgba(230,200,114,0.25);
+      background: rgba(0,0,0,0.42);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      padding: 14px 0;
+      white-space: nowrap;
+      color: var(--gold-light);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .ticker span {
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .ticker strong {
+      color: var(--text);
+    }
+
     .eyebrow {
       color: var(--gold-light);
       text-transform: uppercase;
@@ -501,6 +533,21 @@
         </div>
       </div>
     </section>
+
+    <div class="now-developing">
+      <div class="container ticker">
+        <span>Currently Developing</span>
+        <strong>ICE MAIDEN</strong>
+        <span>•</span>
+        <strong>MOB SQUAD</strong>
+        <span>•</span>
+        <strong>HE SEES HER</strong>
+        <span>•</span>
+        <strong>VERONICA</strong>
+        <span>•</span>
+        <strong>NEW SHERIFF IN TOWN</strong>
+      </div>
+    </div>
 
     <section id="work">
       <div class="container">
