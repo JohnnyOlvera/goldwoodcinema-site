@@ -321,10 +321,54 @@
     .contact .section-intro { margin-left: auto; margin-right: auto; }
 
     footer {
-      padding: 34px 0;
+      padding: 54px 0 40px;
       color: var(--muted);
       font-size: 0.9rem;
       text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+    }
+
+    .footer-brand {
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .footer-links a {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 10px 16px;
+      transition: all 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .footer-credit {
+      max-width: 700px;
+      margin: 0 auto 18px;
+      line-height: 1.7;
     }
 
     .trailer-modal {
@@ -588,7 +632,20 @@
 
   <footer>
     <div class="container">
-      © 2026 Goldwood Cinema. All rights reserved.
+      <div class="footer-brand">Goldwood Cinema</div>
+      <div class="footer-tagline">Stories built to entertain — and stay with you.</div>
+
+      <div class="footer-links">
+        <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">IMDb</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="mailto:jawknee.olvera@gmail.com">Email</a>
+      </div>
+
+      <p class="footer-credit">
+        Produced filmmaker Johnny Olvera is the writer/director of THE WARREN, a neo-noir mystery feature currently streaming on Tubi.
+      </p>
+
+      <div>© 2026 Goldwood Cinema. All rights reserved.</div>
     </div>
   </footer>
   <script>
