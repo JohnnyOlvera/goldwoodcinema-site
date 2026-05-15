@@ -169,6 +169,7 @@
     .button:hover {
       transform: translateY(-2px);
       border-color: var(--gold-light);
+      box-shadow: 0 12px 30px rgba(199,162,75,0.18);
     }
 
     section { padding: 82px 0; }
@@ -240,6 +241,12 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       background: rgba(199,162,75,0.08);
+      transition: all 0.25s ease;
+    }
+
+    .featured-project:hover .project-badge {
+      background: rgba(199,162,75,0.18);
+      border-color: rgba(230,200,114,0.52);
     }
 
     .card p { color: var(--muted); }
@@ -281,6 +288,29 @@
       border: 1px solid rgba(199,162,75,0.22);
       border-radius: 24px;
       padding: 22px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(230,200,114,0.08) 48%, transparent 56%);
+      transform: translateX(-120%);
+      transition: transform 0.7s ease;
+      pointer-events: none;
+    }
+
+    .featured-project:hover {
+      transform: translateY(-6px);
+      border-color: rgba(230,200,114,0.48);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
+
+    .featured-project:hover::before {
+      transform: translateX(120%);
     }
 
     .poster-wrap {
@@ -296,6 +326,13 @@
       border: 1px solid rgba(255,255,255,0.14);
       box-shadow: 0 20px 60px rgba(0,0,0,0.45);
       display: block;
+      transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+    }
+
+    .featured-project:hover .project-poster {
+      transform: scale(1.03);
+      border-color: rgba(230,200,114,0.52);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.6);
     }
 
     .project-row {
