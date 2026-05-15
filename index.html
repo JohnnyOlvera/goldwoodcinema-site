@@ -228,6 +228,27 @@
       gap: 14px;
     }
 
+    .featured-project {
+      grid-template-columns: 220px 1fr auto;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(199,162,75,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(199,162,75,0.22);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .poster-wrap {
+      width: 100%;
+    }
+
+    .project-poster {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      display: block;
+    }
+
     .project-row {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -261,7 +282,8 @@
       .nav { align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { flex-wrap: wrap; gap: 14px; }
       .grid, .feature { grid-template-columns: 1fr; }
-      .project-row { grid-template-columns: 1fr; }
+      .project-row, .featured-project { grid-template-columns: 1fr; }
+      .poster-wrap { max-width: 260px; }
       section { padding: 62px 0; }
     }
   </style>
@@ -334,7 +356,10 @@
         <h2 class="section-title">Current Slate</h2>
         <p class="section-intro">A developing slate of film and television concepts across thriller, action, romance, animation, and vertical storytelling.</p>
         <div class="project-list">
-          <div class="project-row">
+          <div class="project-row featured-project">
+            <div class="poster-wrap">
+              <img src="images/ice-maiden-poster.png" alt="Ice Maiden poster" class="project-poster" />
+            </div>
             <div>
               <h3>ICE MAIDEN</h3>
               <p>A psychological thriller about a brilliant detective whose ritual murder investigation forces her into a dangerous connection with the killer — and the darkness within herself.</p>
