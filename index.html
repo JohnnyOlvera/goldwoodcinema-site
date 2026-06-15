@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Goldwood Cinema | Official Site</title>
-  <meta name="description" content="Goldwood Cinema is the creative home of writer/director Johnny Olvera — bold, cinematic stories built for audiences who want entertainment on the surface and meaning underneath." />
+  <title>Johnny Olvera | The Producer's Director | Goldwood Cinema</title>
+  <meta name="description" content="Johnny Olvera is The Producer's Director — a writer/director creating elevated commercial genre stories built with creative vision and production discipline." />
+
   <style>
     :root {
       --bg: #070707;
@@ -76,7 +78,7 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.78) 38%, rgba(0,0,0,0.38) 68%, rgba(0,0,0,0.82) 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.82) 42%, rgba(0,0,0,0.42) 70%, rgba(0,0,0,0.86) 100%),
         linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.92) 100%),
         url('images/ice-maiden-poster.png') center right / contain no-repeat;
     }
@@ -94,51 +96,9 @@
       pointer-events: none;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.04) 48%, transparent 54%);
-      opacity: 0.42;
-      transform: translateX(-20%);
-      pointer-events: none;
-    }
-
     .hero-content {
       position: relative;
-      max-width: 880px;
-    }
-
-    .now-developing {
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid rgba(230,200,114,0.25);
-      border-bottom: 1px solid rgba(230,200,114,0.25);
-      background: rgba(0,0,0,0.42);
-      backdrop-filter: blur(12px);
-      overflow: hidden;
-    }
-
-    .ticker {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      padding: 14px 0;
-      white-space: nowrap;
-      color: var(--gold-light);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .ticker span {
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-
-    .ticker strong {
-      color: var(--text);
+      max-width: 860px;
     }
 
     .eyebrow {
@@ -150,25 +110,26 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 7.8rem);
+      font-size: clamp(3.2rem, 8vw, 7.8rem);
       line-height: 0.9;
       letter-spacing: -0.06em;
-      margin-bottom: 26px;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: clamp(1.1rem, 2vw, 1.42rem);
-      color: var(--muted);
-      margin-bottom: 34px;
+      margin-bottom: 22px;
     }
 
     .hero-tagline {
-      color: var(--gold-light) !important;
+      color: var(--gold-light);
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      font-size: clamp(0.95rem, 1.6vw, 1.25rem) !important;
-      margin-bottom: 18px !important;
+      font-size: clamp(1rem, 1.7vw, 1.3rem);
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: clamp(1.1rem, 2vw, 1.42rem);
+      color: var(--muted);
+      margin-bottom: 34px;
     }
 
     .buttons {
@@ -204,6 +165,36 @@
       box-shadow: 0 12px 30px rgba(199,162,75,0.18);
     }
 
+    .now-developing {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(230,200,114,0.25);
+      border-bottom: 1px solid rgba(230,200,114,0.25);
+      background: rgba(0,0,0,0.42);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      padding: 14px 0;
+      white-space: nowrap;
+      color: var(--gold-light);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .ticker span {
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .ticker strong { color: var(--text); }
+
     section { padding: 82px 0; }
 
     .section-title {
@@ -215,9 +206,34 @@
 
     .section-intro {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       font-size: 1.08rem;
       margin-bottom: 34px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .proof-card {
+      background: linear-gradient(180deg, rgba(199,162,75,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(199,162,75,0.22);
+      border-radius: 22px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .proof-card h3 {
+      color: var(--gold-light);
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .proof-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .grid {
@@ -241,6 +257,8 @@
       margin-bottom: 10px;
     }
 
+    .card p { color: var(--muted); }
+
     .tag {
       display: inline-block;
       color: #111;
@@ -253,35 +271,6 @@
       letter-spacing: 0.08em;
       margin-bottom: 14px;
     }
-
-    .project-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 14px;
-    }
-
-    .project-badge {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(230,200,114,0.34);
-      color: var(--gold-light);
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: rgba(199,162,75,0.08);
-      transition: all 0.25s ease;
-    }
-
-    .featured-project:hover .project-badge {
-      background: rgba(199,162,75,0.18);
-      border-color: rgba(230,200,114,0.52);
-    }
-
-    .card p { color: var(--muted); }
 
     .feature {
       display: grid;
@@ -308,13 +297,17 @@
       color: var(--muted);
     }
 
+    .bio-box strong { color: var(--text); }
+
     .project-list {
       display: grid;
       gap: 14px;
     }
 
-    .featured-project {
-      grid-template-columns: 220px 1fr auto;
+    .project-row {
+      display: grid;
+      grid-template-columns: 320px 1fr auto;
+      gap: 22px;
       align-items: center;
       background: linear-gradient(135deg, rgba(199,162,75,0.08), rgba(255,255,255,0.02));
       border: 1px solid rgba(199,162,75,0.22);
@@ -325,28 +318,14 @@
       overflow: hidden;
     }
 
-    .featured-project::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(230,200,114,0.08) 48%, transparent 56%);
-      transform: translateX(-120%);
-      transition: transform 0.7s ease;
-      pointer-events: none;
-    }
-
-    .featured-project:hover {
+    .project-row:hover {
       transform: translateY(-6px);
       border-color: rgba(230,200,114,0.48);
       box-shadow: 0 30px 80px rgba(0,0,0,0.45);
     }
 
-    .featured-project:hover::before {
-      transform: translateX(120%);
-    }
-
     .poster-wrap {
-      width: 320px;
+      width: 100%;
       flex-shrink: 0;
     }
 
@@ -361,24 +340,48 @@
       transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
     }
 
-    .featured-project:hover .project-poster {
+    .project-row:hover .project-poster {
       transform: scale(1.03);
       border-color: rgba(230,200,114,0.52);
       box-shadow: 0 30px 90px rgba(0,0,0,0.6);
     }
 
-    .project-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+    .project-row h3 {
+      font-size: 1.8rem;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
-    .project-row h3 { font-size: 1.3rem; color: var(--text); }
     .project-row p { color: var(--muted); }
-    .project-row span { color: var(--gold-light); font-size: 0.86rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .project-row > span {
+      color: var(--gold-light);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: right;
+    }
+
+    .project-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(230,200,114,0.34);
+      color: var(--gold-light);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(199,162,75,0.08);
+    }
 
     .contact {
       text-align: center;
@@ -435,7 +438,7 @@
     }
 
     .footer-credit {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto 18px;
       line-height: 1.7;
     }
@@ -452,9 +455,7 @@
       backdrop-filter: blur(10px);
     }
 
-    .trailer-modal.active {
-      display: flex;
-    }
+    .trailer-modal.active { display: flex; }
 
     .trailer-frame-wrap {
       width: min(1000px, 94vw);
@@ -490,30 +491,42 @@
       color: var(--gold-light);
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       .nav { align-items: flex-start; gap: 14px; flex-direction: column; }
       .nav-links { flex-wrap: wrap; gap: 14px; }
+
       .hero {
         background:
-          linear-gradient(180deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.72) 46%, rgba(0,0,0,0.95) 100%),
+          linear-gradient(180deg, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.78) 46%, rgba(0,0,0,0.96) 100%),
           url('images/ice-maiden-poster.png') center top / cover no-repeat;
         min-height: 88vh;
       }
-      .grid, .feature { grid-template-columns: 1fr; }
-      .project-row, .featured-project { grid-template-columns: 1fr; }
-      .poster-wrap { max-width: 260px; }
+
+      .grid, .feature, .proof-grid, .project-row {
+        grid-template-columns: 1fr;
+      }
+
+      .project-row > span { text-align: left; }
+
+      .poster-wrap { max-width: 280px; }
+
+      .project-poster { height: 430px; }
+
       section { padding: 62px 0; }
     }
   </style>
+
 </head>
+
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="#top">Goldwood Cinema</a>
       <nav class="nav-links" aria-label="Main navigation">
+        <a href="#director">Director</a>
         <a href="#work">Work</a>
+        <a href="#execution">Proof</a>
         <a href="#slate">Slate</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -522,229 +535,255 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-content">
-        <div class="eyebrow">Goldwood Cinema Presents</div>
-        <h1>ICE MAIDEN</h1>
-        <p class="hero-tagline">He knows her better than she does.</p>
-        <p>Goldwood Cinema is the creative home of writer/director Johnny Olvera — developing bold, character-driven films and series with cinematic hooks, emotional consequence, and layered meaning beneath the surface.</p>
-        <div class="buttons">
-          <button class="button primary trailer-button" data-video="RBFohZAoOpU">Watch Trailer</button>
-          <a class="button" href="#slate">Explore the Slate</a>
-          <a class="button" href="#contact">Connect</a>
-        </div>
-      </div>
-    </section>
+        <div class="eyebrow">Johnny Olvera</div>
+        <h1>The Producer's Director</h1>
+        <p class="hero-tagline">Creative Vision. Production Discipline.</p>
+        <p>Writer/director Johnny Olvera creates elevated commercial genre stories built from a rare 360-degree production perspective — actor, script supervisor, assistant director, producer, writer, and director.</p>
 
-    <div class="now-developing">
-      <div class="container ticker">
-        <span>Currently Developing</span>
-        <strong>ICE MAIDEN</strong>
-        <span>•</span>
-        <strong>MOB SQUAD</strong>
-        <span>•</span>
-        <strong>HE SEES HER</strong>
-        <span>•</span>
-        <strong>VERONICA</strong>
-        <span>•</span>
-        <strong>NEW SHERIFF IN TOWN</strong>
+```
+    <div class="buttons">
+      <button class="button primary trailer-button" data-video="RBFohZAoOpU">Watch ICE MAIDEN Trailer</button>
+      <a class="button" href="#director">Meet Johnny</a>
+      <a class="button" href="#slate">Explore the Slate</a>
+    </div>
+  </div>
+</section>
+
+<div class="now-developing">
+  <div class="container ticker">
+    <span>Currently Developing</span>
+    <strong>ICE MAIDEN</strong>
+    <span>•</span>
+    <strong>MOB SQUAD</strong>
+    <span>•</span>
+    <strong>HE SEES HER</strong>
+    <span>•</span>
+    <strong>VERONICA</strong>
+    <span>•</span>
+    <strong>NEW SHERIFF IN TOWN</strong>
+  </div>
+</div>
+
+<section id="director">
+  <div class="container">
+    <h2 class="section-title">A filmmaker built for production.</h2>
+    <p class="section-intro">Johnny Olvera brings a holistic filmmaking perspective shaped by performance, continuity, scheduling, production logistics, writing, producing, and directing. His work is built around one guiding idea: creative ambition means more when it can actually be executed.</p>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <h3>30+ Years</h3>
+        <p>SAG-AFTRA actor with a lifelong understanding of performance and actor communication.</p>
+      </div>
+
+      <div class="proof-card">
+        <h3>12 Years</h3>
+        <p>Script supervisor experience with a deep understanding of continuity, coverage, and editorial workflow.</p>
+      </div>
+
+      <div class="proof-card">
+        <h3>Produced Feature</h3>
+        <p>Writer/director of THE WARREN, a completed feature film that secured distribution.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <section id="work">
-      <div class="container">
-        <h2 class="section-title">A simple promise.</h2>
-        <p class="section-intro">If you want entertainment, you’ll be entertained. If you want meaning, there will always be more to find.</p>
-        <div class="grid">
-          <article class="card">
-            <span class="tag">Thriller</span>
-            <h3>Psychological Pressure</h3>
-            <p>Stories that place characters under moral and emotional stress until the truth underneath them has nowhere left to hide.</p>
-          </article>
+<section id="work">
+  <div class="container">
+    <h2 class="section-title">Elevated commercial genre storytelling.</h2>
+    <p class="section-intro">Goldwood Cinema develops cinematic stories designed to be accessible on the surface, emotionally layered underneath, and practical enough to move from concept to screen.</p>
 
-          <article class="card">
-            <span class="tag">Adventure</span>
-            <h3>Big-Screen Mythmaking</h3>
-            <p>Elevated genre stories with mythology, danger, humor, and heart — built for audiences across generations.</p>
-          </article>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Thriller</span>
+        <h3>Psychological Pressure</h3>
+        <p>Contained, tension-driven stories where character, fear, and moral compromise collide.</p>
+      </article>
 
-          <article class="card">
-            <span class="tag">Comedy</span>
-            <h3>Character First</h3>
-            <p>High-concept premises grounded in performance, emotional honesty, and people audiences recognize in themselves.</p>
-          </article>
+      <article class="card">
+        <span class="tag">Action</span>
+        <h3>Commercial Scope</h3>
+        <p>High-concept genre projects designed with audience appeal, casting potential, and scalable production in mind.</p>
+      </article>
+
+      <article class="card">
+        <span class="tag">Performance</span>
+        <h3>Character First</h3>
+        <p>Stories grounded in behavior, emotion, and the choices people make under pressure.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="execution">
+  <div class="container">
+    <div class="feature">
+      <div>
+        <div class="eyebrow">Proof of Execution</div>
+        <h2 class="section-title">From screenplay to distribution.</h2>
+        <p class="section-intro">Many filmmakers develop projects. Far fewer complete a feature film, navigate post-production, secure distribution, and bring a project to audiences. Johnny Olvera's debut feature, <strong>THE WARREN</strong>, stands as proof of execution.</p>
+
+        <div class="project-badges">
+          <span class="project-badge">THE WARREN</span>
+          <span class="project-badge">Streaming on Tubi</span>
+          <span class="project-badge">Produced Feature Film</span>
+        </div>
+
+        <div class="buttons" style="margin-top:22px;">
+          <a class="button primary" href="https://tubitv.com" target="_blank" rel="noopener noreferrer">Watch on Tubi</a>
+          <a class="button" href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">View IMDb</a>
         </div>
       </div>
-    </section>
 
-    <section id="industry">
-      <div class="container">
-        <div class="feature">
-          <div>
-            <div class="eyebrow">Produced Filmmaker</div>
-            <h2 class="section-title">From screenplay to distribution.</h2>
-            <p class="section-intro">Goldwood Cinema is led by writer/director Johnny Olvera, whose feature film <strong>THE WARREN</strong> completed production and secured distribution, now streaming on Tubi. The company continues developing cinematic projects across thriller, action, romance, fantasy, and serialized storytelling.</p>
-
-            <div class="project-badges">
-              <span class="project-badge">THE WARREN</span>
-              <span class="project-badge">Streaming on Tubi</span>
-              <span class="project-badge">Produced Feature Film</span>
-            </div>
-
-            <div class="buttons" style="margin-top:22px;">
-              <a class="button primary" href="https://tubitv.com" target="_blank" rel="noopener noreferrer">Watch on Tubi</a>
-              <a class="button" href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">View IMDb</a>
-            </div>
-          </div>
-
-          <div class="bio-box">
-            <p><strong>Why it matters</strong></p>
-            <br />
-            <p>Many filmmakers develop projects.
-            <br /><br />
-            Far fewer complete a feature film, navigate post-production, secure distribution, and bring a project to audiences. Goldwood Cinema is built on execution as much as imagination.</p>
-          </div>
-        </div>
+      <div class="bio-box">
+        <p><strong>Why it matters</strong></p>
+        <br />
+        <p>Johnny's background across acting, script supervision, assistant directing, producing, writing, and directing gives him a production-minded approach to storytelling. He understands performance, schedule, continuity, coverage, post workflow, and the practical realities that determine whether a project can actually reach the screen.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="statement">
-      <div class="container">
-        <div class="feature">
-          <div>
-            <div class="eyebrow">Director Statement</div>
-            <h2 class="section-title">The stories come first.</h2>
-            <p class="section-intro">Goldwood Cinema creates stories designed to work on multiple levels — accessible and entertaining on the surface, emotionally layered underneath. Whether thriller, romance, fantasy, or action, the goal remains the same: cinematic experiences that audiences feel first and continue thinking about long after the credits roll.</p>
-            <p class="quote">“If you want entertainment, you’ll be entertained. If you want meaning, there will always be more to find.”</p>
-          </div>
-
-          <div class="bio-box">
-            <p><strong>The Log Principle™</strong></p>
-            <br />
-            <p>"If there’s a log in the path, you cross it."
-            <br /><br />
-            Goldwood Cinema is built around creative momentum, self-sufficiency, and collaboration through action. The philosophy is simple: solve problems, move forward, and keep building worlds worth believing in.</p>
-          </div>
-        </div>
+<section id="statement">
+  <div class="container">
+    <div class="feature">
+      <div>
+        <div class="eyebrow">Director Statement</div>
+        <h2 class="section-title">Creative vision. Production discipline.</h2>
+        <p class="section-intro">Goldwood Cinema creates stories designed to work on multiple levels — entertaining and accessible on the surface, emotionally layered underneath. Whether thriller, action, romance, fantasy, or serialized storytelling, the goal remains the same: cinematic experiences that audiences feel first and continue thinking about after the credits roll.</p>
+        <p class="quote">“If you want entertainment, you’ll be entertained. If you want meaning, there will always be more to find.”</p>
       </div>
-    </section>
 
-    <section id="about">
-      <div class="container feature">
+      <div class="bio-box">
+        <p><strong>The Producer's Director</strong></p>
+        <br />
+        <p>A director who understands not only the image, but the cost of the image. Not only the performance, but the schedule around the performance. Not only the story, but the workflow required to deliver it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container feature">
+    <div>
+      <h2 class="section-title">Entertainment on the surface. Meaning underneath.</h2>
+      <p class="section-intro">Goldwood Cinema develops cinematic stories designed to be accessible, exciting, and emotionally layered — films and series that invite audiences in, then reward those who look deeper.</p>
+      <p class="quote">Fun. All-inclusive. Layered.</p>
+    </div>
+
+    <div class="bio-box">
+      <p><strong>Johnny Olvera</strong> is a writer/director and founder of Goldwood Cinema. Drawing on more than 30 years as a SAG-AFTRA actor, 12 years as a script supervisor, assistant directing experience, producing, writing, and directing, he creates elevated commercial genre stories built with both creative vision and production discipline.</p>
+    </div>
+  </div>
+</section>
+
+<section id="slate">
+  <div class="container">
+    <h2 class="section-title">Current Slate</h2>
+    <p class="section-intro">A developing slate of film and television concepts across thriller, action, romance, animation, and vertical storytelling.</p>
+
+    <div class="project-list">
+      <div class="project-row">
+        <div class="poster-wrap">
+          <img src="images/ice-maiden-poster.png" alt="Ice Maiden poster" class="project-poster" />
+        </div>
         <div>
-          <h2 class="section-title">Entertainment on the surface. Meaning underneath.</h2>
-          <p class="section-intro">Goldwood Cinema develops cinematic stories designed to be accessible, exciting, and emotionally layered — films and series that invite everyone in, then reward those who look deeper.</p>
-          <p class="quote">Fun. All-inclusive. Layered.</p>
+          <h3>ICE MAIDEN</h3>
+          <div class="project-badges">
+            <span class="project-badge">Primary Industry Project</span>
+            <span class="project-badge">Contained Psychological Thriller</span>
+            <span class="project-badge">Proof-of-Concept Trailer</span>
+          </div>
+          <p>A contained psychological detective thriller in the vein of SILENCE OF THE LAMBS and SE7EN. A brilliant detective develops a dangerous psychological connection with the serial killer she is hunting.</p>
+          <button class="button trailer-button" data-video="RBFohZAoOpU" style="margin-top:16px;">Watch Trailer</button>
         </div>
-
-        <div class="bio-box">
-          <p>Johnny Olvera is a writer/director and produced filmmaker with a background in acting, script supervision, and independent feature production. His work focuses on performance, tension, emotional consequence, and stories that respect the audience’s intelligence.</p>
-        </div>
+        <span>Feature Thriller</span>
       </div>
-    </section>
 
-    <section id="slate">
-      <div class="container">
-        <h2 class="section-title">Current Slate</h2>
-        <p class="section-intro">A developing slate of film and television concepts across thriller, action, romance, animation, and vertical storytelling.</p>
-
-        <div class="project-list">
-          <div class="project-row featured-project">
-            <div class="poster-wrap">
-              <img src="images/ice-maiden-poster.png" alt="Ice Maiden poster" class="project-poster" />
-            </div>
-            <div>
-              <h3>ICE MAIDEN</h3>
-              <div class="project-badges">
-                <span class="project-badge">Feature Screenplay</span>
-                <span class="project-badge">Proof-of-Concept Trailer</span>
-                <span class="project-badge">Psychological Thriller</span>
-              </div>
-              <p>A psychological thriller about a brilliant detective whose ritual murder investigation forces her into a dangerous connection with the killer — and the darkness within herself.</p>
-              <button class="button trailer-button" data-video="RBFohZAoOpU" style="margin-top:16px;">Watch Trailer</button>
-            </div>
-            <span>Feature Thriller</span>
-          </div>
-
-          <div class="project-row featured-project">
-            <div class="poster-wrap">
-              <img src="images/mob-squad-poster.png" alt="Mob Squad poster" class="project-poster" />
-            </div>
-            <div>
-              <h3>MOB SQUAD</h3>
-              <div class="project-badges">
-                <span class="project-badge">Feature Screenplay</span>
-                <span class="project-badge">Proof-of-Concept Trailer</span>
-                <span class="project-badge">WWII Action</span>
-              </div>
-              <p>A WWII action film about imprisoned mobsters recruited into a covert OSS mission behind enemy lines.</p>
-              <button class="button trailer-button" data-video="Oj3GnDQc4yM" style="margin-top:16px;">Watch Trailer</button>
-            </div>
-            <span>Feature Action</span>
-          </div>
-
-          <div class="project-row featured-project">
-            <div class="poster-wrap">
-              <img src="images/he-sees-her-poster.png" alt="He Sees Her poster" class="project-poster" />
-            </div>
-            <div>
-              <h3>HE SEES HER</h3>
-              <div class="project-badges">
-                <span class="project-badge">Feature Screenplay</span>
-                <span class="project-badge">Proof-of-Concept Trailer</span>
-                <span class="project-badge">Romantic Comedy</span>
-              </div>
-              <p>A relationship podcaster turns her love life into a public experiment to prove romance is broken — until someone refuses to play by her rules.</p>
-              <button class="button trailer-button" data-video="qE-mvcEAWrc" style="margin-top:16px;">Watch Trailer</button>
-            </div>
-            <span>Romantic Comedy</span>
-          </div>
-
-          <div class="project-row featured-project">
-            <div class="poster-wrap">
-              <img src="images/veronica-poster.png" alt="Veronica poster" class="project-poster" />
-            </div>
-            <div>
-              <h3>VERONICA</h3>
-              <div class="project-badges">
-                <span class="project-badge">Animated Feature</span>
-                <span class="project-badge">Proof-of-Concept Trailer</span>
-                <span class="project-badge">Family Fantasy</span>
-              </div>
-              <p>An animated family adventure inspired by folklore, built with humor, magic, danger, and emotional wonder.</p>
-              <button class="button trailer-button" data-video="E2drTQ__NbU" style="margin-top:16px;">Watch Trailer</button>
-            </div>
-            <span>Animated Feature</span>
-          </div>
-
-          <div class="project-row featured-project">
-            <div class="poster-wrap">
-              <img src="images/new-sheriff-in-town-poster.png" alt="New Sheriff in Town poster" class="project-poster" />
-            </div>
-            <div>
-              <h3>NEW SHERIFF IN TOWN</h3>
-              <div class="project-badges">
-                <span class="project-badge">Vertical Series</span>
-                <span class="project-badge">Trailer Coming Soon</span>
-                <span class="project-badge">Modern Western</span>
-              </div>
-              <p>A vertical action series built for fast-paced digital storytelling, cliffhangers, and cinematic short-form momentum.</p>
-              <span style="display:inline-block;margin-top:16px;color:var(--muted);font-size:0.9rem;">Trailer Coming Soon</span>
-            </div>
-            <span>Vertical Series</span>
-          </div>
+      <div class="project-row">
+        <div class="poster-wrap">
+          <img src="images/mob-squad-poster.png" alt="Mob Squad poster" class="project-poster" />
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Let’s build what’s next.</h2>
-        <p class="section-intro">For producing, development, representation, or project inquiries, connect with Goldwood Cinema.</p>
-        <div class="buttons" style="justify-content:center;">
-          <a class="button primary" href="mailto:johnny@goldwoodcinema.com">Email Goldwood Cinema</a>
-          <a class="button" href="https://www.goldwoodcinema.com">goldwoodcinema.com</a>
+        <div>
+          <h3>MOB SQUAD</h3>
+          <div class="project-badges">
+            <span class="project-badge">Commercial Action Package</span>
+            <span class="project-badge">WWII Ensemble Thriller</span>
+            <span class="project-badge">International Appeal</span>
+          </div>
+          <p>THE DIRTY DOZEN meets INGLOURIOUS BASTERDS. Imprisoned mobsters are recruited by the OSS for a covert mission behind Nazi lines — only to discover they may have been chosen because they were never expected to return.</p>
+          <button class="button trailer-button" data-video="Oj3GnDQc4yM" style="margin-top:16px;">Watch Trailer</button>
         </div>
+        <span>Feature Action</span>
       </div>
-    </section>
+
+      <div class="project-row">
+        <div class="poster-wrap">
+          <img src="images/he-sees-her-poster.png" alt="He Sees Her poster" class="project-poster" />
+        </div>
+        <div>
+          <h3>HE SEES HER</h3>
+          <div class="project-badges">
+            <span class="project-badge">Romantic Comedy</span>
+            <span class="project-badge">Feature Screenplay</span>
+            <span class="project-badge">Proof-of-Concept Trailer</span>
+          </div>
+          <p>A relationship podcaster turns her love life into a public experiment to prove romance is broken — until someone refuses to play by her rules.</p>
+          <button class="button trailer-button" data-video="qE-mvcEAWrc" style="margin-top:16px;">Watch Trailer</button>
+        </div>
+        <span>Romantic Comedy</span>
+      </div>
+
+      <div class="project-row">
+        <div class="poster-wrap">
+          <img src="images/veronica-poster.png" alt="Veronica poster" class="project-poster" />
+        </div>
+        <div>
+          <h3>VERONICA</h3>
+          <div class="project-badges">
+            <span class="project-badge">Family Animation</span>
+            <span class="project-badge">Animated Feature</span>
+            <span class="project-badge">Proof-of-Concept Trailer</span>
+          </div>
+          <p>An animated family adventure inspired by folklore, built with humor, magic, danger, and emotional wonder.</p>
+          <button class="button trailer-button" data-video="E2drTQ__NbU" style="margin-top:16px;">Watch Trailer</button>
+        </div>
+        <span>Animated Feature</span>
+      </div>
+
+      <div class="project-row">
+        <div class="poster-wrap">
+          <img src="images/new-sheriff-in-town-poster.png" alt="New Sheriff in Town poster" class="project-poster" />
+        </div>
+        <div>
+          <h3>NEW SHERIFF IN TOWN</h3>
+          <div class="project-badges">
+            <span class="project-badge">Vertical Series</span>
+            <span class="project-badge">Modern Western</span>
+            <span class="project-badge">Trailer Coming Soon</span>
+          </div>
+          <p>A vertical action series built for fast-paced digital storytelling, cinematic short-form momentum, and episode-ending cliffhangers.</p>
+          <span style="display:inline-block;margin-top:16px;color:var(--muted);font-size:0.9rem;">Trailer Coming Soon</span>
+        </div>
+        <span>Vertical Series</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Let’s build what’s next.</h2>
+    <p class="section-intro">For producing, development, representation, directing, or project inquiries, connect with Goldwood Cinema.</p>
+
+    <div class="buttons" style="justify-content:center;">
+      <a class="button primary" href="mailto:johnny@goldwoodcinema.com">Email Johnny Olvera</a>
+      <a class="button" href="#slate">View Current Slate</a>
+    </div>
+  </div>
+</section>
+```
+
   </main>
 
   <div class="trailer-modal" id="trailerModal" aria-hidden="true">
@@ -757,20 +796,23 @@
   <footer>
     <div class="container">
       <div class="footer-brand">Goldwood Cinema</div>
-      <div class="footer-tagline">Stories built to entertain — and stay with you.</div>
+      <div class="footer-tagline">Johnny Olvera — The Producer's Director</div>
 
-      <div class="footer-links">
-        <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">IMDb</a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="mailto:johnny@goldwoodcinema.com">Email</a>
-      </div>
+```
+  <div class="footer-links">
+    <a href="https://www.imdb.com" target="_blank" rel="noopener noreferrer">IMDb</a>
+    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="mailto:johnny@goldwoodcinema.com">Email</a>
+  </div>
 
-      <p class="footer-credit">
-        Produced filmmaker Johnny Olvera is the writer/director of THE WARREN, a neo-noir mystery feature currently streaming on Tubi.
-      </p>
+  <p class="footer-credit">
+    Creative Vision. Production Discipline. Elevated commercial genre storytelling from writer/director Johnny Olvera.
+  </p>
 
-      <div>© 2026 Goldwood Cinema. All rights reserved.</div>
-    </div>
+  <div>© 2026 Goldwood Cinema. All rights reserved.</div>
+</div>
+```
+
   </footer>
 
   <script>
@@ -804,5 +846,6 @@
       if (event.key === 'Escape') closeTrailerModal();
     });
   </script>
+
 </body>
 </html>
