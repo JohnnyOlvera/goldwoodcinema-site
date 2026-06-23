@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Goldwood Cinema | Development Studio & Project Hub</title>
-  <meta name="description" content="Goldwood Cinema develops commercially focused entertainment properties for film, television, animation, vertical platforms, and emerging formats. Founded by Johnny Olvera, Story Architect & Production Strategist." />
+  <meta name="description" content="Goldwood Cinema transforms concepts into production-ready entertainment properties through story architecture, screenplay development, world building, packaging, visual strategy, and production-minded development." />
 
   <style>
     :root {
@@ -16,6 +16,7 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
       font-family:Arial,Helvetica,sans-serif;
       background:radial-gradient(circle at top,#1a1408 0%,var(--bg) 42%,#000 100%);
@@ -27,12 +28,12 @@
     header{
       position:sticky;top:0;z-index:20;
       backdrop-filter:blur(14px);
-      background:rgba(7,7,7,.78);
+      background:rgba(7,7,7,.82);
       border-bottom:1px solid rgba(255,255,255,.08)
     }
     .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
     .brand{font-size:1.05rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
-    .nav-links{display:flex;gap:22px;font-size:.86rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .nav-links{display:flex;gap:20px;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
     .nav-links a:hover{color:var(--gold-light)}
 
     .hero{
@@ -52,11 +53,11 @@
       mask-image:radial-gradient(circle at center,black 0%,transparent 78%);
       pointer-events:none;
     }
-    .hero-content{position:relative;max-width:880px}
+    .hero-content{position:relative;max-width:900px}
     .eyebrow{color:var(--gold-light);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;margin-bottom:18px}
     h1{font-size:clamp(3.2rem,8vw,7.8rem);line-height:.9;letter-spacing:-.06em;margin-bottom:22px}
     .hero-tagline{color:var(--gold-light);text-transform:uppercase;letter-spacing:.16em;font-size:clamp(1rem,1.7vw,1.3rem);margin-bottom:18px;font-weight:800}
-    .hero p{max-width:780px;font-size:clamp(1.1rem,2vw,1.42rem);color:var(--muted);margin-bottom:34px}
+    .hero p{max-width:800px;font-size:clamp(1.1rem,2vw,1.42rem);color:var(--muted);margin-bottom:34px}
 
     .buttons{display:flex;flex-wrap:wrap;gap:14px}
     .button{
@@ -75,7 +76,7 @@
 
     section{padding:82px 0}
     .section-title{font-size:clamp(2rem,4vw,3.6rem);line-height:1;letter-spacing:-.04em;margin-bottom:18px}
-    .section-intro{color:var(--muted);max-width:820px;font-size:1.08rem;margin-bottom:34px}
+    .section-intro{color:var(--muted);max-width:840px;font-size:1.08rem;margin-bottom:34px}
 
     .proof-grid,.grid,.service-grid,.pipeline-grid{
       display:grid;grid-template-columns:repeat(3,1fr);gap:18px
@@ -101,6 +102,20 @@
     .quote{font-size:clamp(1.7rem,3vw,3rem);line-height:1.08;letter-spacing:-.04em}
     .bio-box{background:var(--soft);border-left:3px solid var(--gold);padding:24px;border-radius:18px;color:var(--muted)}
     .bio-box strong{color:var(--text)}
+
+    .download-box{
+      margin-top:28px;
+      padding:32px;
+      border-radius:28px;
+      border:1px solid rgba(230,200,114,.32);
+      background:linear-gradient(135deg,rgba(199,162,75,.16),rgba(255,255,255,.03));
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:22px;
+      align-items:center;
+    }
+    .download-box h3{color:var(--gold-light);font-size:1.6rem;margin-bottom:8px}
+    .download-box p{color:var(--muted)}
 
     .pipeline-band{
       background:linear-gradient(135deg,rgba(199,162,75,.12),rgba(255,255,255,.02));
@@ -154,7 +169,7 @@
       .nav{align-items:flex-start;gap:14px;flex-direction:column}
       .nav-links{flex-wrap:wrap;gap:14px}
       .hero{background:linear-gradient(180deg,rgba(0,0,0,.84),rgba(0,0,0,.78),rgba(0,0,0,.96)),url('images/ice-maiden-poster.png') center top/cover no-repeat;min-height:88vh}
-      .grid,.feature,.proof-grid,.service-grid,.pipeline-grid,.project-row,.pipeline-flow{grid-template-columns:1fr}
+      .grid,.feature,.proof-grid,.service-grid,.pipeline-grid,.project-row,.pipeline-flow,.download-box{grid-template-columns:1fr}
       .project-row>span{text-align:left}
       .poster-wrap{max-width:280px}
       .project-poster{height:430px}
@@ -169,8 +184,9 @@
     <a class="brand" href="#top">Goldwood Cinema</a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#studio">Studio</a>
-      <a href="#services">Development</a>
+      <a href="#services">Services</a>
       <a href="#pipeline">Pipeline</a>
+      <a href="#deck">Deck</a>
       <a href="#advantage">Advantage</a>
       <a href="#slate">Slate</a>
       <a href="#contact">Contact</a>
@@ -184,18 +200,18 @@
       <div class="eyebrow">Goldwood Cinema</div>
       <h1>Development Studio<br />& Project Hub</h1>
       <p class="hero-tagline">Creative Vision. Production Discipline.</p>
-      <p>Goldwood Cinema develops commercially focused entertainment properties for film, television, animation, vertical platforms, and emerging formats — from concept to screenplay, pitch package, visual strategy, and production-ready materials.</p>
+      <p>Goldwood Cinema transforms concepts into production-ready entertainment properties for film, television, animation, and premium vertical series — from concept to story architecture, screenplay development, visual strategy, pitch packaging, and production-minded materials.</p>
       <div class="buttons">
-        <a class="button primary" href="#pipeline">The Development Pipeline</a>
+        <a class="button primary" href="#deck">Download Services Deck</a>
+        <a class="button" href="#pipeline">The Development Pipeline</a>
         <a class="button" href="#slate">Explore the Slate</a>
-        <button class="button trailer-button" data-video="RBFohZAoOpU">Watch ICE MAIDEN Trailer</button>
       </div>
     </div>
   </section>
 
   <div class="now-developing">
     <div class="container ticker">
-      <span>Currently Developing</span><strong>ICE MAIDEN</strong><span>•</span><strong>MOB SQUAD</strong><span>•</span><strong>HE SEES HER</strong><span>•</span><strong>VERONICA</strong><span>•</span><strong>THE NEW SHERIFF IN TOWN</strong>
+      <span>Development Hub</span><strong>Story Architecture</strong><span>•</span><strong>Screenplay Development</strong><span>•</span><strong>World Building</strong><span>•</span><strong>Packaging</strong><span>•</span><strong>Production Strategy</strong>
     </div>
   </div>
 
@@ -227,20 +243,58 @@
           <span class="tag">Development</span>
           <h3>Story Architecture</h3>
           <p>Transforming ideas into commercially viable entertainment properties.</p>
-          <ul><li>Feature Film Development</li><li>Television Development</li><li>Vertical Drama Development</li><li>Adaptations</li><li>Series Bibles</li><li>Script Strategy</li></ul>
+          <ul>
+            <li>Feature Film Development</li>
+            <li>Television Development</li>
+            <li>Vertical Drama Development</li>
+            <li>Adaptations</li>
+            <li>Series Bibles</li>
+            <li>Script Strategy</li>
+          </ul>
         </article>
+
         <article class="service-card">
           <span class="tag">Packaging</span>
           <h3>Market-Ready Materials</h3>
           <p>Preparing projects for producers, buyers, financiers, and platforms.</p>
-          <ul><li>Pitch Decks</li><li>One-Sheets</li><li>Lookbooks</li><li>Director's Vision Books</li><li>Poster Concepts</li><li>Presentation Strategy</li></ul>
+          <ul>
+            <li>Pitch Decks</li>
+            <li>One-Sheets</li>
+            <li>Lookbooks</li>
+            <li>Director's Vision Books</li>
+            <li>Poster Concepts</li>
+            <li>Presentation Strategy</li>
+          </ul>
         </article>
+
         <article class="service-card">
           <span class="tag">Production</span>
           <h3>Creative Execution</h3>
           <p>Developing projects with the realities of production in mind.</p>
-          <ul><li>Director Strategy</li><li>Visual Language</li><li>Performance Approach</li><li>Continuity Awareness</li><li>Production Practicality</li><li>Commercial Positioning</li></ul>
+          <ul>
+            <li>Director Strategy</li>
+            <li>Visual Language</li>
+            <li>Performance Approach</li>
+            <li>Continuity Awareness</li>
+            <li>Production Practicality</li>
+            <li>Commercial Positioning</li>
+          </ul>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="deck">
+    <div class="container">
+      <h2 class="section-title">Development & Packaging Services Deck</h2>
+      <p class="section-intro">A producer-facing overview of Goldwood Cinema's development process, services, pipeline, advantages, selected properties, and packaging capabilities.</p>
+
+      <div class="download-box">
+        <div>
+          <h3>Goldwood Cinema Development & Packaging Services</h3>
+          <p>Download the executive services deck for an overview of how Goldwood transforms concepts into production-ready entertainment properties.</p>
+        </div>
+        <a class="button primary" href="development-packaging-services.pdf" target="_blank" rel="noopener noreferrer">Download PDF</a>
       </div>
     </div>
   </section>
@@ -289,25 +343,59 @@
           <div class="eyebrow">Proof of Execution</div>
           <h2 class="section-title">From screenplay to distribution.</h2>
           <p class="section-intro">Johnny Olvera's debut feature, <strong>THE WARREN</strong>, stands as proof of execution.</p>
-          <div class="project-badges"><span class="project-badge">THE WARREN</span><span class="project-badge">Streaming on Tubi</span><span class="project-badge">Produced Feature Film</span></div>
+          <div class="project-badges">
+            <span class="project-badge">THE WARREN</span>
+            <span class="project-badge">Streaming on Tubi</span>
+            <span class="project-badge">Produced Feature Film</span>
+          </div>
           <div class="buttons" style="margin-top:22px;">
             <a class="button primary" href="https://tubitv.com/movies/100047968/the-warren" target="_blank" rel="noopener noreferrer">Watch on Tubi</a>
             <a class="button" href="https://imdb.me/johnnyolvera" target="_blank" rel="noopener noreferrer">View IMDb</a>
           </div>
         </div>
-        <div class="bio-box"><p><strong>Why it matters</strong></p><br /><p>A completed feature is proof that the creative vision survived production, post-production, delivery, distribution, and release.</p></div>
+        <div class="bio-box">
+          <p><strong>Why it matters</strong></p><br />
+          <p>A completed feature is proof that the creative vision survived production, post-production, delivery, distribution, and release.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="work">
+  <section id="slate">
     <div class="container">
-      <h2 class="section-title">Elevated commercial genre storytelling.</h2>
-      <p class="section-intro">Goldwood develops projects designed to be accessible on the surface, emotionally layered underneath, and practical enough to move from concept to screen.</p>
-      <div class="grid">
-        <article class="card"><span class="tag">Thriller</span><h3>Psychological Pressure</h3><p>Contained, tension-driven stories where character, fear, and moral compromise collide.</p></article>
-        <article class="card"><span class="tag">Action</span><h3>Commercial Scope</h3><p>High-concept genre projects designed with audience appeal, casting potential, and scalable production in mind.</p></article>
-        <article class="card"><span class="tag">Vertical</span><h3>Fast-Moving Series</h3><p>Short-form serialized drama built around emotional hooks, cliffhangers, and production-ready execution.</p></article>
+      <h2 class="section-title">Current Slate</h2>
+      <p class="section-intro">A developing slate of film, television, animation, and premium vertical properties.</p>
+
+      <div class="project-list">
+        <div class="project-row">
+          <div class="poster-wrap"><img src="images/ice-maiden-poster.png" alt="Ice Maiden poster" class="project-poster" /></div>
+          <div><h3>ICE MAIDEN</h3><div class="project-badges"><span class="project-badge">Primary Industry Project</span><span class="project-badge">Contained Psychological Thriller</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>A contained psychological detective thriller in the vein of SILENCE OF THE LAMBS and SE7EN.</p><button class="button trailer-button" data-video="RBFohZAoOpU" style="margin-top:16px;">Watch Trailer</button></div>
+          <span>Feature Thriller</span>
+        </div>
+
+        <div class="project-row">
+          <div class="poster-wrap"><img src="images/mob-squad-poster.png" alt="Mob Squad poster" class="project-poster" /></div>
+          <div><h3>MOB SQUAD</h3><div class="project-badges"><span class="project-badge">Commercial Action Package</span><span class="project-badge">WWII Ensemble Thriller</span><span class="project-badge">International Appeal</span></div><p>THE DIRTY DOZEN meets INGLOURIOUS BASTERDS. Imprisoned mobsters are recruited by the OSS for a covert mission behind Nazi lines.</p><button class="button trailer-button" data-video="Oj3GnDQc4yM" style="margin-top:16px;">Watch Trailer</button></div>
+          <span>Feature Action</span>
+        </div>
+
+        <div class="project-row">
+          <div class="poster-wrap"><img src="images/he-sees-her-poster.png" alt="He Sees Her poster" class="project-poster" /></div>
+          <div><h3>HE SEES HER</h3><div class="project-badges"><span class="project-badge">Romantic Comedy</span><span class="project-badge">Feature Screenplay</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>A relationship podcaster turns her love life into a public experiment to prove romance is broken — until someone refuses to play by her rules.</p><button class="button trailer-button" data-video="qE-mvcEAWrc" style="margin-top:16px;">Watch Trailer</button></div>
+          <span>Romantic Comedy</span>
+        </div>
+
+        <div class="project-row">
+          <div class="poster-wrap"><img src="images/veronica-poster.png" alt="Veronica poster" class="project-poster" /></div>
+          <div><h3>VERONICA</h3><div class="project-badges"><span class="project-badge">Family Animation</span><span class="project-badge">Animated Feature</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>An animated family adventure inspired by folklore, built with humor, magic, danger, and emotional wonder.</p><button class="button trailer-button" data-video="E2drTQ__NbU" style="margin-top:16px;">Watch Trailer</button></div>
+          <span>Animated Feature</span>
+        </div>
+
+        <div class="project-row">
+          <div class="poster-wrap"><img src="images/new-sheriff-in-town-poster.png" alt="The New Sheriff in Town poster" class="project-poster" /></div>
+          <div><h3>THE NEW SHERIFF IN TOWN</h3><div class="project-badges"><span class="project-badge">Vertical Series</span><span class="project-badge">Modern Western</span><span class="project-badge">Production Package</span></div><p>A vertical action series built for fast-paced digital storytelling, cinematic short-form momentum, and episode-ending cliffhangers.</p><span style="display:inline-block;margin-top:16px;color:var(--muted);font-size:.9rem;">Trailer Coming Soon</span></div>
+          <span>Vertical Series</span>
+        </div>
       </div>
     </div>
   </section>
@@ -321,37 +409,21 @@
           <p class="section-intro">Goldwood Cinema creates stories designed to work on multiple levels — entertaining and accessible on the surface, emotionally layered underneath.</p>
           <p class="quote">“If you want entertainment, you’ll be entertained. If you want meaning, there will always be more to find.”</p>
         </div>
-        <div class="bio-box"><p><strong>The Producer's Director</strong></p><br /><p>A director and development partner who understands not only the image, but the cost of the image. Not only the story, but the workflow required to deliver it.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="slate">
-    <div class="container">
-      <h2 class="section-title">Current Slate</h2>
-      <p class="section-intro">A developing slate of film, television, animation, and vertical properties.</p>
-
-      <div class="project-list">
-        <div class="project-row"><div class="poster-wrap"><img src="images/ice-maiden-poster.png" alt="Ice Maiden poster" class="project-poster" /></div><div><h3>ICE MAIDEN</h3><div class="project-badges"><span class="project-badge">Primary Industry Project</span><span class="project-badge">Contained Psychological Thriller</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>A contained psychological detective thriller in the vein of SILENCE OF THE LAMBS and SE7EN.</p><button class="button trailer-button" data-video="RBFohZAoOpU" style="margin-top:16px;">Watch Trailer</button></div><span>Feature Thriller</span></div>
-
-        <div class="project-row"><div class="poster-wrap"><img src="images/mob-squad-poster.png" alt="Mob Squad poster" class="project-poster" /></div><div><h3>MOB SQUAD</h3><div class="project-badges"><span class="project-badge">Commercial Action Package</span><span class="project-badge">WWII Ensemble Thriller</span><span class="project-badge">International Appeal</span></div><p>THE DIRTY DOZEN meets INGLOURIOUS BASTERDS. Imprisoned mobsters are recruited by the OSS for a covert mission behind Nazi lines.</p><button class="button trailer-button" data-video="Oj3GnDQc4yM" style="margin-top:16px;">Watch Trailer</button></div><span>Feature Action</span></div>
-
-        <div class="project-row"><div class="poster-wrap"><img src="images/he-sees-her-poster.png" alt="He Sees Her poster" class="project-poster" /></div><div><h3>HE SEES HER</h3><div class="project-badges"><span class="project-badge">Romantic Comedy</span><span class="project-badge">Feature Screenplay</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>A relationship podcaster turns her love life into a public experiment to prove romance is broken — until someone refuses to play by her rules.</p><button class="button trailer-button" data-video="qE-mvcEAWrc" style="margin-top:16px;">Watch Trailer</button></div><span>Romantic Comedy</span></div>
-
-        <div class="project-row"><div class="poster-wrap"><img src="images/veronica-poster.png" alt="Veronica poster" class="project-poster" /></div><div><h3>VERONICA</h3><div class="project-badges"><span class="project-badge">Family Animation</span><span class="project-badge">Animated Feature</span><span class="project-badge">Proof-of-Concept Trailer</span></div><p>An animated family adventure inspired by folklore, built with humor, magic, danger, and emotional wonder.</p><button class="button trailer-button" data-video="E2drTQ__NbU" style="margin-top:16px;">Watch Trailer</button></div><span>Animated Feature</span></div>
-
-        <div class="project-row"><div class="poster-wrap"><img src="images/new-sheriff-in-town-poster.png" alt="The New Sheriff in Town poster" class="project-poster" /></div><div><h3>THE NEW SHERIFF IN TOWN</h3><div class="project-badges"><span class="project-badge">Vertical Series</span><span class="project-badge">Modern Western</span><span class="project-badge">Production Package</span></div><p>A vertical action series built for fast-paced digital storytelling, cinematic short-form momentum, and episode-ending cliffhangers.</p><span style="display:inline-block;margin-top:16px;color:var(--muted);font-size:.9rem;">Trailer Coming Soon</span></div><span>Vertical Series</span></div>
+        <div class="bio-box">
+          <p><strong>The Producer's Director</strong></p><br />
+          <p>A director and development partner who understands not only the image, but the cost of the image. Not only the story, but the workflow required to deliver it.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Let’s build what’s next.</h2>
+      <h2 class="section-title">Let’s build something worth watching.</h2>
       <p class="section-intro">For producing, development, representation, directing, packaging, or project inquiries, connect with Goldwood Cinema.</p>
       <div class="buttons" style="justify-content:center;">
         <a class="button primary" href="mailto:johnny@goldwoodcinema.com">Email Johnny Olvera</a>
-        <a class="button" href="#pipeline">View Development Pipeline</a>
+        <a class="button" href="development-packaging-services.pdf" target="_blank" rel="noopener noreferrer">Download Services Deck</a>
       </div>
     </div>
   </section>
@@ -369,11 +441,12 @@
     <div class="footer-brand">Goldwood Cinema</div>
     <div class="footer-tagline">Development Studio & Project Hub</div>
     <div class="footer-links">
+      <a href="development-packaging-services.pdf" target="_blank" rel="noopener noreferrer">Services Deck</a>
       <a href="https://imdb.me/johnnyolvera" target="_blank" rel="noopener noreferrer">IMDb</a>
       <a href="https://youtu.be/t8nIq_HnDp4" target="_blank" rel="noopener noreferrer">Director Reel</a>
       <a href="mailto:johnny@goldwoodcinema.com">Email</a>
     </div>
-    <p class="footer-credit">Commercially focused entertainment properties for film, television, animation, vertical platforms, and emerging formats.</p>
+    <p class="footer-credit">Commercially focused entertainment properties for film, television, animation, premium vertical series, and emerging formats.</p>
     <div>© 2026 Goldwood Cinema. All rights reserved.</div>
   </div>
 </footer>
