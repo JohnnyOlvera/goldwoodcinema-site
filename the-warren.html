@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>THE WARREN | Goldwood Cinema</title>
-<meta name="description" content="THE WARREN - A neo-noir detective mystery written and directed by Johnny Olvera. Produced through Goldwood Cinema and released to streaming audiences.">
+<meta name="description" content="THE WARREN - A neo-noir detective mystery written and directed by Johnny Olvera. Produced for $3,200, shot across 30+ locations in 3 days, and released to streaming audiences.">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -22,15 +22,9 @@
 --line:rgba(201,164,92,.28);
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:'Inter',sans-serif;
@@ -42,10 +36,7 @@ color:var(--cream);
 line-height:1.7;
 }
 
-a{
-color:inherit;
-text-decoration:none;
-}
+a{color:inherit;text-decoration:none;}
 
 .header{
 position:fixed;
@@ -84,9 +75,7 @@ text-transform:uppercase;
 color:var(--muted);
 }
 
-.nav-links a:hover{
-color:var(--gold2);
-}
+.nav-links a:hover{color:var(--gold2);}
 
 .hero{
 min-height:100vh;
@@ -187,7 +176,7 @@ margin-bottom:34px;
 display:flex;
 flex-wrap:wrap;
 gap:12px;
-margin-bottom:36px;
+margin-bottom:30px;
 }
 
 .meta-line span{
@@ -198,6 +187,28 @@ font-size:.76rem;
 letter-spacing:1.4px;
 text-transform:uppercase;
 background:rgba(0,0,0,.35);
+}
+
+.laurels{
+font-family:'Cinzel',serif;
+display:inline-block;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+padding:14px 28px;
+margin-bottom:34px;
+color:var(--gold2);
+letter-spacing:1.6px;
+text-align:center;
+}
+
+.laurels small{
+display:block;
+font-family:'Inter',sans-serif;
+font-size:.68rem;
+letter-spacing:2.2px;
+text-transform:uppercase;
+color:var(--muted);
+margin-top:4px;
 }
 
 .button-group{
@@ -238,9 +249,7 @@ background:rgba(201,164,92,.1);
 transform:translateY(-2px);
 }
 
-section{
-padding:110px 22px;
-}
+section{padding:110px 22px;}
 
 .container{
 max-width:1120px;
@@ -314,8 +323,7 @@ color:var(--muted);
 }
 
 .panel{
-background:
-linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
 border:1px solid rgba(201,164,92,.2);
 padding:38px;
 box-shadow:0 30px 70px rgba(0,0,0,.28);
@@ -328,9 +336,7 @@ color:var(--gold2);
 margin-bottom:18px;
 }
 
-.panel p{
-color:#d5cdbf;
-}
+.panel p{color:#d5cdbf;}
 
 .snapshot{
 display:grid;
@@ -353,9 +359,7 @@ color:var(--gold2);
 margin-bottom:18px;
 }
 
-.snapshot-card p{
-color:#d7cfc2;
-}
+.snapshot-card p{color:#d7cfc2;}
 
 .quote-section{
 background:
@@ -381,6 +385,81 @@ letter-spacing:2.5px;
 text-transform:uppercase;
 color:var(--gold2);
 margin-top:30px;
+}
+
+.video-wrap{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border:1px solid rgba(201,164,92,.26);
+box-shadow:0 35px 80px rgba(0,0,0,.55);
+background:#000;
+margin-top:42px;
+}
+
+.video-wrap iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.gallery-card{
+min-height:220px;
+border:1px solid rgba(201,164,92,.18);
+background:
+linear-gradient(135deg,rgba(201,164,92,.10),rgba(255,255,255,.025)),
+#101010;
+display:flex;
+align-items:flex-end;
+padding:24px;
+}
+
+.gallery-card p{
+font-size:.82rem;
+letter-spacing:1.7px;
+text-transform:uppercase;
+color:var(--gold2);
+}
+
+.note{
+background:
+linear-gradient(135deg,rgba(201,164,92,.08),rgba(255,255,255,.02));
+border:1px solid rgba(201,164,92,.2);
+padding:48px;
+}
+
+.note p{
+font-size:1.12rem;
+color:#d8d0c2;
+margin-bottom:20px;
+}
+
+.signature{
+margin-top:30px;
+color:var(--gold2);
+font-family:'Cinzel',serif;
+font-size:1.15rem;
+}
+
+.signature span{
+display:block;
+font-family:'Inter',sans-serif;
+font-size:.75rem;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--muted);
+margin-top:5px;
 }
 
 .proof-grid{
@@ -416,9 +495,7 @@ color:var(--gold2);
 margin-bottom:16px;
 }
 
-.proof-card p{
-color:#d3cabd;
-}
+.proof-card p{color:#d3cabd;}
 
 .cta{
 text-align:center;
@@ -444,53 +521,20 @@ letter-spacing:1.2px;
 }
 
 @media(max-width:1000px){
-.hero-inner,
-.split{
-grid-template-columns:1fr;
-}
-
-.poster-wrap{
-max-width:360px;
-}
-
-.stat-grid,
-.proof-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.snapshot{
-grid-template-columns:1fr;
-}
+.hero-inner,.split{grid-template-columns:1fr;}
+.poster-wrap{max-width:360px;}
+.stat-grid,.proof-grid{grid-template-columns:repeat(2,1fr);}
+.snapshot,.gallery{grid-template-columns:1fr;}
 }
 
 @media(max-width:620px){
-.nav{
-align-items:flex-start;
-flex-direction:column;
-}
-
-.nav-links{
-flex-wrap:wrap;
-gap:14px;
-}
-
-.hero{
-padding-top:170px;
-}
-
-.stat-grid,
-.proof-grid{
-grid-template-columns:1fr;
-}
-
-.poster-wrap{
-max-width:300px;
-}
-
-.btn{
-width:100%;
-text-align:center;
-}
+.nav{align-items:flex-start;flex-direction:column;}
+.nav-links{flex-wrap:wrap;gap:14px;}
+.hero{padding-top:170px;}
+.stat-grid,.proof-grid{grid-template-columns:1fr;}
+.poster-wrap{max-width:300px;}
+.btn{width:100%;text-align:center;}
+.note{padding:30px;}
 }
 </style>
 </head>
@@ -527,10 +571,15 @@ A neo-noir detective mystery written and directed by Johnny Olvera, produced wit
 </p>
 
 <div class="meta-line">
-<span>Neo-Noir Mystery</span>
-<span>74 Minutes</span>
+<span>Produced for $3,200</span>
 <span>30+ Locations</span>
 <span>3 Shoot Days</span>
+<span>Released on Tubi</span>
+</div>
+
+<div class="laurels">
+Nominee
+<small>2025 SAG-AFTRA American Scene Awards</small>
 </div>
 
 <div class="button-group">
@@ -554,25 +603,10 @@ Most filmmakers can show a screenplay. Some can show a pitch deck. Few can show 
 </p>
 
 <div class="stat-grid">
-<div class="stat">
-<strong>$3.2K</strong>
-<span>Production Budget</span>
-</div>
-
-<div class="stat">
-<strong>30+</strong>
-<span>Locations</span>
-</div>
-
-<div class="stat">
-<strong>3</strong>
-<span>Shoot Days</span>
-</div>
-
-<div class="stat">
-<strong>74</strong>
-<span>Minute Feature</span>
-</div>
+<div class="stat"><strong>$3.2K</strong><span>Production Budget</span></div>
+<div class="stat"><strong>30+</strong><span>Locations</span></div>
+<div class="stat"><strong>3</strong><span>Shoot Days</span></div>
+<div class="stat"><strong>74</strong><span>Minute Feature</span></div>
 </div>
 
 </div>
@@ -653,6 +687,73 @@ Released to Streaming Audiences
 “If Johnny made this for $3,200, what could he do with a real budget?”
 <span>The strategic purpose of THE WARREN page</span>
 </p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="section-kicker">The Trailer</div>
+<h2>Watch The Film’s Proof Of Scale</h2>
+
+<p class="lead">
+The trailer gives producers and collaborators an immediate look at the tone, visual ambition, and finished execution behind THE WARREN.
+</p>
+
+<div class="video-wrap">
+<iframe src="https://www.youtube.com/embed/lr25jL8Ihcc" title="THE WARREN Trailer" allowfullscreen></iframe>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="section-kicker">Behind The Film</div>
+<h2>Designed To Look Larger Than Its Budget</h2>
+
+<p class="lead">
+THE WARREN was built through disciplined location strategy, aggressive preparation, and a visual approach designed to create scale without relying on scale.
+</p>
+
+<div class="gallery">
+<div class="gallery-card"><p>Location-Driven Production</p></div>
+<div class="gallery-card"><p>Long-Take Visual Design</p></div>
+<div class="gallery-card"><p>Noir Atmosphere</p></div>
+<div class="gallery-card"><p>Practical Execution</p></div>
+<div class="gallery-card"><p>Lean Production Strategy</p></div>
+<div class="gallery-card"><p>Finished Feature Delivery</p></div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<div class="section-kicker">Director's Note</div>
+<h2>The Answer Was Preparation</h2>
+
+<div class="note">
+<p>
+THE WARREN began as a challenge: could a feature film be produced at meaningful scale with almost no resources?
+</p>
+
+<p>
+The answer was not money. It was preparation. Every production decision had to begin earlier than usual — in the writing, in the locations, in the blocking, in the schedule, and in the edit.
+</p>
+
+<p>
+That discipline is now central to how Goldwood Cinema approaches development. The goal is not simply to create material. The goal is to create material that can survive production.
+</p>
+
+<div class="signature">
+Johnny Olvera
+<span>Writer / Director · Goldwood Cinema</span>
+</div>
+</div>
 
 </div>
 </section>
