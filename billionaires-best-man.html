@@ -1,1 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<title>The Billionaire's Best Man | Goldwood Cinema</title>
+<meta name="description" content="The Billionaire's Best Man is a premium vertical romance-mystery series from Goldwood Cinema." />
+
+<style>
+:root{
+  --bg:#070707;
+  --panel:#101010;
+  --soft:#181818;
+  --gold:#c7a24b;
+  --gold-light:#e6c872;
+  --text:#f4f1ea;
+  --muted:#b8b0a2;
+  --line:rgba(199,162,75,.28);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:radial-gradient(circle at top,#1a1408 0%,var(--bg) 42%,#000 100%);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(7,7,7,.82);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.brand{
+  font-size:1.05rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  font-size:.82rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.nav-links a:hover{
+  color:var(--gold-light);
+}
+
+.hero{
+  padding:92px 0 80px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:54px;
+  align-items:center;
+}
+
+.poster{
+  width:100%;
+  border-radius:26px;
+  border:1px solid rgba(230,200,114,.32);
+  box-shadow:0 32px 90px rgba(0,0,0,.65);
+}
+
+.eyebrow{
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.8rem;
+  margin-bottom:18px;
+  font-weight:800;
+}
+
+h1{
+  font-size:clamp(3rem,7vw,6.6rem);
+  line-height:.9;
+  letter-spacing:-.06em;
+  margin-bottom:24px;
+}
+
+.tagline{
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:1rem;
+  margin-bottom:22px;
+  font-weight:800;
+}
+
+.description{
+  color:var(--muted);
+  font-size:1.18rem;
+  max-width:720px;
+  margin-bottom:28px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--text);
+  background:rgba(255,255,255,.04);
+  transition:all .2s ease;
+  font-weight:700;
+}
+
+.button.primary{
+  background:linear-gradient(135deg,var(--gold),#82601f);
+  color:#090806;
+  border:none;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+  border-color:var(--gold-light);
+  box-shadow:0 12px 30px rgba(199,162,75,.18);
+}
+
+.stats{
+  padding:34px 0;
+  border-top:1px solid rgba(230,200,114,.22);
+  border-bottom:1px solid rgba(230,200,114,.22);
+  background:rgba(0,0,0,.35);
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.stat{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(230,200,114,.18);
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.76rem;
+  margin-bottom:6px;
+}
+
+.stat span{
+  color:var(--text);
+  font-weight:700;
+}
+
+section{
+  padding:76px 0;
+}
+
+.section-title{
+  font-size:clamp(2.2rem,4vw,4rem);
+  line-height:1;
+  letter-spacing:-.04em;
+  margin-bottom:18px;
+}
+
+.section-intro{
+  color:var(--muted);
+  max-width:840px;
+  font-size:1.08rem;
+  margin-bottom:34px;
+}
+
+.feature{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:start;
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:32px;
+  padding:clamp(28px,5vw,54px);
+}
+
+.quote{
+  font-size:clamp(1.7rem,3vw,3rem);
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+
+.box{
+  background:var(--soft);
+  border-left:3px solid var(--gold);
+  padding:24px;
+  border-radius:18px;
+  color:var(--muted);
+}
+
+.box strong{
+  color:var(--text);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:linear-gradient(180deg,rgba(199,162,75,.12),rgba(255,255,255,.03));
+  border:1px solid rgba(199,162,75,.22);
+  border-radius:22px;
+  padding:24px;
+}
+
+.card h3{
+  color:var(--gold-light);
+  margin-bottom:10px;
+  font-size:1.35rem;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:.98rem;
+}
+
+.pdf-section{
+  background:rgba(0,0,0,.32);
+  border-top:1px solid rgba(230,200,114,.22);
+  border-bottom:1px solid rgba(230,200,114,.22);
+}
+
+.pdf-frame{
+  width:100%;
+  height:900px;
+  border:1px solid rgba(230,200,114,.22);
+  border-radius:22px;
+  background:#111;
+}
+
+footer{
+  padding:54px 0 40px;
+  color:var(--muted);
+  font-size:.9rem;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-brand{
+  color:var(--gold-light);
+  font-size:1.2rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin:20px 0;
+}
+
+.footer-links a{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  padding:10px 16px;
+}
+
+@media(max-width:900px){
+  .nav{
+    align-items:flex-start;
+    gap:14px;
+    flex-direction:column;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .hero-grid,
+  .feature,
+  .cards,
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .poster{
+    max-width:420px;
+    margin:0 auto;
+    display:block;
+  }
+
+  section{
+    padding:62px 0;
+  }
+
+  .pdf-frame{
+    height:620px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">Goldwood Cinema</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="future.html">Future</a>
+      <a href="index.html#deck">Services</a>
+      <a href="index.html#slate">Slate</a>
+      <a href="mailto:johnny@goldwoodcinema.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <img
+        class="poster"
+        src="images/billionaires-best-man-poster.png"
+        alt="The Billionaire's Best Man poster">
+    </div>
+
+    <div>
+      <div class="eyebrow">Premium Vertical Series</div>
+
+      <h1>
+        The Billionaire's<br>
+        Best Man
+      </h1>
+
+      <p class="tagline">
+        Love. Loyalty. Lies. And a key that unlocks the past.
+      </p>
+
+      <p class="description">
+        Ten years ago, Camila Ruiz lost the love of her life and volunteered
+        for an experimental memory-suppression program. Now engaged to a
+        billionaire heir, she discovers a silver key that unlocks a conspiracy
+        buried in her past — and a romance she was never supposed to remember.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="billionaires-best-man.pdf" target="_blank" rel="noopener noreferrer">
+          Download Pitch Deck
+        </a>
+        <a class="button" href="#overview">
+          View Overview
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>Format</strong><span>Vertical Series</span></div>
+    <div class="stat"><strong>Length</strong><span>120 Episodes</span></div>
+    <div class="stat"><strong>Genre</strong><span>Romance • Mystery</span></div>
+    <div class="stat"><strong>Status</strong><span>Completed</span></div>
+    <div class="stat"><strong>Created By</strong><span>Johnny Olvera</span></div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="container">
+    <div class="feature">
+      <div>
+        <div class="eyebrow">Series Overview</div>
+        <h2 class="section-title">A billionaire romance built around memory, identity, and betrayal.</h2>
+        <p class="section-intro">
+          THE BILLIONAIRE'S BEST MAN combines the emotional engine of a wedding-countdown romance
+          with the serialized momentum of a mystery thriller. Each episode is designed around
+          a strong emotional turn, a clear visual hook, and a cliffhanger built for retention.
+        </p>
+        <p class="quote">
+          A woman about to marry one billionaire discovers her heart may belong to the man standing beside him.
+        </p>
+      </div>
+
+      <div class="box">
+        <p><strong>Core Hook</strong></p><br>
+        <p>
+          A secret from the past. A wedding in 30 days. One truth that changes everything.
+        </p><br>
+        <p>
+          At the center of the series is a silver key necklace — the object that unlocks Camila's lost history,
+          exposes the conspiracy around her, and forces her to choose between loyalty, truth, and love.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Why it fits the vertical market.</h2>
+    <p class="section-intro">
+      The series is built around emotional clarity, rapid reversals, visual storytelling, and
+      mystery-driven retention — all designed for short-form serialized viewing.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Romance Engine</h3>
+        <p>A love triangle built around an impending wedding, buried memory, and an impossible emotional choice.</p>
+      </article>
+
+      <article class="card">
+        <h3>Mystery Retention</h3>
+        <p>The key, Protocol 7, Atlas remnants, and Camila's missing past create serialized questions that pull audiences forward.</p>
+      </article>
+
+      <article class="card">
+        <h3>Production-Friendly</h3>
+        <p>Contained locations, recurring relationship dynamics, and high-stakes reveals make the series scalable for vertical production.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pdf-section">
+  <div class="container">
+    <h2 class="section-title">Pitch Deck</h2>
+    <p class="section-intro">
+      View or download the complete presentation package for THE BILLIONAIRE'S BEST MAN.
+    </p>
+
+    <div class="buttons" style="margin-bottom:24px;">
+      <a class="button primary" href="billionaires-best-man.pdf" target="_blank" rel="noopener noreferrer">
+        Open PDF
+      </a>
+    </div>
+
+    <iframe
+      class="pdf-frame"
+      src="billionaires-best-man.pdf"
+      title="The Billionaire's Best Man Pitch Deck">
+    </iframe>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="feature">
+      <div>
+        <div class="eyebrow">Goldwood Cinema</div>
+        <h2 class="section-title">Designed for serialized engagement.</h2>
+        <p class="section-intro">
+          THE BILLIONAIRE'S BEST MAN is part of Goldwood Cinema's premium vertical slate —
+          story worlds built for emotional momentum, audience retention, and platform expansion.
+        </p>
+      </div>
+
+      <div class="box">
+        <p><strong>Inquiries</strong></p><br>
+        <p>
+          For development, production, partnership, representation, or platform inquiries,
+          contact Goldwood Cinema.
+        </p><br>
+        <a class="button primary" href="mailto:johnny@goldwoodcinema.com">
+          Contact Johnny Olvera
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">Goldwood Cinema</div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="future.html">Future of Serialized Storytelling</a>
+      <a href="development-packaging-services.pdf" target="_blank" rel="noopener noreferrer">Services Deck</a>
+      <a href="https://imdb.me/johnnyolvera" target="_blank" rel="noopener noreferrer">IMDb</a>
+      <a href="mailto:johnny@goldwoodcinema.com">Email</a>
+    </div>
+
+    <p>
+      © 2026 Goldwood Cinema. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
