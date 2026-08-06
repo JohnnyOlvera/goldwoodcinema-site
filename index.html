@@ -2331,5 +2331,103 @@ document.querySelectorAll('.reveal').forEach((element)=>revealObserver.observe(e
 }
 </script>
 
+
+<!-- Goldwood Cinema conversion and engagement tracking -->
+<script>
+(function () {
+  const measurementId = 'G-5DFJ3MBXSH';
+
+  function cleanText(value) {
+    return (value || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+  }
+
+  function sendGoldwoodEvent(eventName, link, extraParameters) {
+    if (typeof window.gtag !== 'function') return;
+
+    const url = new URL(link.href, window.location.href);
+
+    window.gtag('event', eventName, {
+      send_to: measurementId,
+      link_url: url.href,
+      link_text: cleanText(link.textContent || link.getAttribute('aria-label')),
+      source_page: window.location.pathname,
+      transport_type: 'beacon',
+      ...extraParameters
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    const rawHref = link.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('javascript:')) return;
+
+    const url = new URL(link.href, window.location.href);
+    const hostname = url.hostname.replace(/^www\./, '');
+    const pathname = url.pathname.toLowerCase();
+    const isInternal = hostname === window.location.hostname.replace(/^www\./, '');
+
+    if (url.protocol === 'mailto:') {
+      sendGoldwoodEvent('generate_lead', link, {
+        lead_source: 'email_click'
+      });
+      return;
+    }
+
+    if (pathname.endsWith('.pdf')) {
+      sendGoldwoodEvent('view_presentation', link, {
+        file_name: pathname.split('/').pop()
+      });
+      return;
+    }
+
+    if (hostname === 'youtube.com' || hostname === 'youtu.be') {
+      sendGoldwoodEvent('watch_trailer', link, {
+        platform: 'youtube'
+      });
+      return;
+    }
+
+    if (hostname === 'tubitv.com') {
+      sendGoldwoodEvent('view_streaming_title', link, {
+        platform: 'tubi'
+      });
+      return;
+    }
+
+    if (hostname === 'imdb.com' || hostname === 'imdb.me') {
+      sendGoldwoodEvent('view_industry_profile', link, {
+        platform: 'imdb'
+      });
+      return;
+    }
+
+    if (isInternal && pathname === '/development') {
+      sendGoldwoodEvent('view_development_services', link, {
+        destination_type: 'services'
+      });
+      return;
+    }
+
+    if (isInternal && pathname === '/future') {
+      sendGoldwoodEvent('read_industry_insight', link, {
+        destination_type: 'insight'
+      });
+      return;
+    }
+
+    if (isInternal && (
+      pathname === '/the-warren' ||
+      pathname === '/billionaires-best-man'
+    )) {
+      sendGoldwoodEvent('view_project', link, {
+        project_slug: pathname.slice(1)
+      });
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
