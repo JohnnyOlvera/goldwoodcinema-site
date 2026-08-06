@@ -1509,6 +1509,39 @@ transform:none;
 }
 }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.goldwoodcinema.com/#organization",
+      "name": "Goldwood Cinema",
+      "url": "https://www.goldwoodcinema.com/",
+      "description": "Goldwood Cinema is an independent film and television production company founded by writer-director Johnny Olvera, developing original IP for production.",
+      "image": "https://www.goldwoodcinema.com/images/goldwood-cinema-hero.png",
+      "founder": {
+        "@id": "https://www.goldwoodcinema.com/#johnny-olvera"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.goldwoodcinema.com/#johnny-olvera",
+      "name": "Johnny Olvera",
+      "jobTitle": "Writer-Director and Founder",
+      "url": "https://www.johnnyolvera.com/",
+      "sameAs": [
+        "https://imdb.me/johnnyolvera"
+      ],
+      "worksFor": {
+        "@id": "https://www.goldwoodcinema.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
