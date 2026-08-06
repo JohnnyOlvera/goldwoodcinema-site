@@ -1,14 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5DFJ3MBXSH"></script>
+<!-- Goldwood Cinema privacy-first analytics consent -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+(function () {
+  'use strict';
 
-  gtag('config', 'G-5DFJ3MBXSH');
+  const measurementId = 'G-5DFJ3MBXSH';
+  const storageKey = 'goldwood_analytics_consent';
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+  // Consent Mode v2 defaults. Google tags remain blocked until analytics consent is granted.
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+
+  function readChoice() {
+    try {
+      return window.localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveChoice(value) {
+    try {
+      window.localStorage.setItem(storageKey, value);
+    } catch (error) {
+      // Consent still applies for the current page even if storage is unavailable.
+    }
+  }
+
+  function deleteCookie(name) {
+    const host = window.location.hostname;
+    const rootDomain = host.replace(/^www\./, '');
+
+    document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+    document.cookie = name + '=; Max-Age=0; path=/; domain=' + host + '; SameSite=Lax';
+    document.cookie = name + '=; Max-Age=0; path=/; domain=.' + rootDomain + '; SameSite=Lax';
+  }
+
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      const name = cookie.split('=')[0].trim();
+      if (name === '_ga' || name.indexOf('_ga_') === 0) {
+        deleteCookie(name);
+      }
+    });
+  }
+
+  function loadAnalytics() {
+    if (window.goldwoodAnalyticsLoaded || window.goldwoodAnalyticsLoading) return;
+
+    window.goldwoodAnalyticsLoading = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+
+    script.onload = function () {
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+      window.goldwoodAnalyticsLoaded = true;
+      window.goldwoodAnalyticsLoading = false;
+      window.dispatchEvent(new CustomEvent('goldwood:analytics-ready'));
+    };
+
+    script.onerror = function () {
+      window.goldwoodAnalyticsLoading = false;
+    };
+
+    document.head.appendChild(script);
+  }
+
+  function updateConsent(value) {
+    window.gtag('consent', 'update', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: value
+    });
+  }
+
+  window.GoldwoodConsent = {
+    isGranted: function () {
+      return readChoice() === 'granted';
+    },
+
+    getChoice: readChoice,
+
+    grant: function () {
+      saveChoice('granted');
+      updateConsent('granted');
+      loadAnalytics();
+      window.dispatchEvent(new CustomEvent('goldwood:consent-changed', {
+        detail: { analytics: 'granted' }
+      }));
+    },
+
+    deny: function () {
+      saveChoice('denied');
+      updateConsent('denied');
+      clearAnalyticsCookies();
+      window.dispatchEvent(new CustomEvent('goldwood:consent-changed', {
+        detail: { analytics: 'denied' }
+      }));
+    },
+
+    open: function () {
+      window.dispatchEvent(new CustomEvent('goldwood:open-consent'));
+    }
+  };
+
+  if (readChoice() === 'granted') {
+    updateConsent('granted');
+    loadAnalytics();
+  }
+})();
 </script>
 
 <meta charset="UTF-8">
@@ -478,6 +591,128 @@ section{padding:118px 0;position:relative}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Goldwood Cinema cookie-consent controls */
+.cookie-consent{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  z-index:1000;
+  width:min(760px,calc(100% - 28px));
+  transform:translateX(-50%);
+  padding:24px;
+  border:1px solid rgba(241,210,138,.48);
+  background:rgba(7,7,7,.98);
+  box-shadow:0 26px 80px rgba(0,0,0,.68);
+  color:#f4efe4;
+  font-family:var(--sans,Arial,sans-serif);
+}
+
+.cookie-consent[hidden]{
+  display:none;
+}
+
+.cookie-consent-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+}
+
+.cookie-consent h2{
+  margin:0 0 8px;
+  color:var(--gold-light,#f1d28a);
+  font-family:var(--serif,Georgia,serif);
+  font-size:1.08rem;
+  line-height:1.25;
+}
+
+.cookie-consent p{
+  margin:0;
+  color:#d4ccbf;
+  font-size:.84rem;
+  line-height:1.6;
+}
+
+.cookie-consent p a{
+  color:var(--gold-light,#f1d28a);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.cookie-consent-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:10px;
+  min-width:285px;
+}
+
+.cookie-consent-button{
+  min-height:44px;
+  padding:11px 15px;
+  border:1px solid rgba(241,210,138,.55);
+  background:transparent;
+  color:var(--gold-light,#f1d28a);
+  cursor:pointer;
+  font:700 .66rem/1.3 var(--sans,Arial,sans-serif);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.cookie-consent-button:hover,
+.cookie-consent-button:focus-visible{
+  border-color:var(--gold-light,#f1d28a);
+  box-shadow:0 10px 24px rgba(201,164,92,.15);
+}
+
+.cookie-consent-button.accept{
+  background:linear-gradient(135deg,var(--gold-light,#f1d28a),var(--gold,#c9a45c));
+  border-color:transparent;
+  color:#080808;
+}
+
+.cookie-settings-link{
+  appearance:none;
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  cursor:pointer;
+  font:inherit;
+  letter-spacing:inherit;
+  text-transform:inherit;
+}
+
+.cookie-settings-link:hover,
+.cookie-settings-link:focus-visible{
+  color:var(--gold-light,#f1d28a);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+@media(max-width:720px){
+  .cookie-consent{
+    bottom:12px;
+    padding:20px;
+  }
+
+  .cookie-consent-inner{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .cookie-consent-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    min-width:0;
+  }
+
+  .cookie-consent-button{
+    width:100%;
+  }
+}
+
 </style>
 </head>
 
@@ -717,6 +952,7 @@ section{padding:118px 0;position:relative}
         <li><a href="/the-warren">The Warren</a></li>
         <li><a href="https://imdb.me/johnnyolvera" target="_blank" rel="noopener noreferrer">IMDb</a></li>
         <li><a href="/privacy">Privacy</a></li>
+        <li><button class="cookie-settings-link" type="button" data-cookie-settings>Cookie Settings</button></li>
 <li><a href="mailto:johnny@goldwoodcinema.com">Email</a></li>
       </ul>
     </nav>
@@ -762,6 +998,90 @@ document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element
 </script>
 
 
+
+<div class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="true" aria-labelledby="cookieConsentTitle" hidden>
+  <div class="cookie-consent-inner">
+    <div>
+      <h2 id="cookieConsentTitle">Optional analytics</h2>
+      <p>
+        Goldwood Cinema uses optional Google Analytics cookies to understand website use and professional interest.
+        Analytics remains off unless you accept. Read the <a href="/privacy">Privacy Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="cookie-consent-button" id="rejectAnalytics" type="button">Reject optional cookies</button>
+      <button class="cookie-consent-button accept" id="acceptAnalytics" type="button">Accept analytics</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  'use strict';
+
+  const banner = document.getElementById('cookieConsent');
+  const acceptButton = document.getElementById('acceptAnalytics');
+  const rejectButton = document.getElementById('rejectAnalytics');
+  const settingsButtons = document.querySelectorAll('[data-cookie-settings]');
+
+  if (!banner || !window.GoldwoodConsent) return;
+
+  let returnFocusTo = null;
+
+  function showBanner(trigger) {
+    returnFocusTo = trigger || document.activeElement;
+    banner.hidden = false;
+    document.body.style.paddingBottom = Math.max(
+      parseInt(window.getComputedStyle(document.body).paddingBottom, 10) || 0,
+      banner.offsetHeight + 34
+    ) + 'px';
+    window.setTimeout(function () {
+      acceptButton.focus();
+    }, 0);
+  }
+
+  function hideBanner() {
+    banner.hidden = true;
+    document.body.style.paddingBottom = '';
+    if (returnFocusTo && typeof returnFocusTo.focus === 'function') {
+      returnFocusTo.focus();
+    }
+    returnFocusTo = null;
+  }
+
+  acceptButton.addEventListener('click', function () {
+    window.GoldwoodConsent.grant();
+    hideBanner();
+  });
+
+  rejectButton.addEventListener('click', function () {
+    window.GoldwoodConsent.deny();
+    hideBanner();
+  });
+
+  settingsButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      showBanner(button);
+    });
+  });
+
+  window.addEventListener('goldwood:open-consent', function () {
+    showBanner();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !banner.hidden && window.GoldwoodConsent.getChoice()) {
+      hideBanner();
+    }
+  });
+
+  if (!window.GoldwoodConsent.getChoice()) {
+    showBanner();
+  }
+})();
+</script>
+
 <!-- Goldwood Cinema conversion and engagement tracking -->
 <script>
 (function () {
@@ -772,7 +1092,12 @@ document.querySelectorAll('.reveal').forEach((element)=>observer.observe(element
   }
 
   function sendGoldwoodEvent(eventName, link, extraParameters) {
-    if (typeof window.gtag !== 'function') return;
+    if (
+      typeof window.gtag !== 'function' ||
+      !window.GoldwoodConsent ||
+      !window.GoldwoodConsent.isGranted() ||
+      !window.goldwoodAnalyticsLoaded
+    ) return;
 
     const url = new URL(link.href, window.location.href);
 
