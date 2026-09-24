@@ -222,6 +222,22 @@ color:var(--gold-light);
 right:0;
 }
 
+.nav-links .nav-contact{
+padding:9px 13px;
+border:1px solid rgba(201,164,92,.5);
+color:var(--gold-light);
+}
+
+.nav-links .nav-contact::after{
+display:none;
+}
+
+.nav-links .nav-contact:hover,
+.nav-links .nav-contact:focus-visible{
+background:rgba(201,164,92,.1);
+border-color:var(--gold-light);
+}
+
 .menu-toggle{
 display:none;
 width:46px;
@@ -1404,6 +1420,12 @@ padding:15px 4px;
 border-bottom:1px solid rgba(255,255,255,.06);
 }
 
+.nav-links .nav-contact{
+padding:15px 4px;
+border:0;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
 .nav-links a::after{
 display:none;
 }
@@ -1670,13 +1692,11 @@ transform:none;
 <nav aria-label="Primary navigation">
 <ul class="nav-links" id="primaryNav">
 <li><a href="#slate">Priority Slate</a></li>
-<li><a href="#warren">Execution</a></li>
-<li><a href="#approach">Method</a></li>
 <li><a href="/creator-partnerships">Creator Partnerships</a></li>
-<li><a href="#insights">Intelligence</a></li>
+<li><a href="#warren">Execution</a></li>
 <li><a href="#library">Library</a></li>
 <li><a href="#about">Founder</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a class="nav-contact" href="#contact">Contact</a></li>
 </ul>
 </nav>
 
